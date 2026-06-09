@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>말 달리자 - 웹 보드</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+	<div class="app">
+		<header class="app__header">
+			<h1 class="app__title">말 달리자</h1>
+			<div class="controls">
+				<div class="mode-controls">
+					<label for="modeSelect">모드</label>
+					<select id="modeSelect">
+						<option value="pvp">2인 대전</option>
+						<option value="ai">VS AI</option>
+					</select>
+				</div>
+				<div class="mode-controls" id="difficultyWrap">
+					<label for="difficultySelect">난이도</label>
+					<select id="difficultySelect">
+						<option value="easy">쉬움</option>
+						<option value="medium">보통</option>
+						<option value="hard">어려움</option>
+					</select>
+				</div>
+				<div class="turn-indicator">
+					<span>턴:</span>
+					<strong id="turnDisplay">흑</strong>
+				</div>
+				<div class="actions">
+					<button id="musicBtn" type="button">BGM 켜기</button>
+					<button id="resetBtn">다시 시작</button>
+				</div>
+				<div class="review-controls" id="reviewCtrls" hidden>
+					<button id="reviewStartBtn" type="button">복기 시작</button>
+					<button id="reviewPrevBtn" type="button" disabled>◀</button>
+					<span id="reviewStep" aria-live="polite">0/0</span>
+					<button id="reviewNextBtn" type="button" disabled>▶</button>
+					<button id="reviewExitBtn" type="button" disabled>종료</button>
+				</div>
+			</div>
+		</header>
+
+		<main class="app__main">
+			<div id="board" class="board" aria-label="11x11 보드"></div>
+		</main>
+
+		<div id="winFx" class="win-fx" aria-hidden="true"></div>
+		<div id="toast" class="toast" role="status" aria-live="polite"></div>
+	</div>
+
+	<script src="./app.js"></script>
+	<noscript>이 애플리케이션을 사용하려면 JavaScript가 필요합니다.</noscript>
+</body>
+	</html>
+
